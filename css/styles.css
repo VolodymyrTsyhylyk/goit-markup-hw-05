@@ -2,7 +2,7 @@
 :root {
   --text-color: #757575;
   --title-text-color: #212121;
-  --blacl-text-color-logo: #000000;
+  --black-text-color-logo: #000000;
   --white-text-color: #ffffff;
   --accent-color: #2196f3;
   --primary-bg-color: #ffffff;
@@ -13,6 +13,9 @@
   --button-hover: #188ce8;
   --hero-bg-gradient: #2f303a66;
   --icon-first-color: #afb1b8;
+
+  --primary-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --action-primary-duration: 250ms;
 }
 
 /* загальні властивості */
@@ -63,8 +66,12 @@ body {
   font-weight: 500;
   cursor: pointer;
   border: none;
-  padding: 10px 32px;
+
   display: inline-block;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .title .subtitle {
   font-size: 36px;
@@ -80,7 +87,8 @@ body {
 .image {
   display: block;
 }
-.icon {
+.icon,
+.modal-cross {
   fill: currentColor;
 }
 /* ХЕДЕР */
@@ -107,7 +115,7 @@ body {
   letter-spacing: 0.03em;
 }
 .header .logo-text {
-  color: var(--blacl-text-color-logo);
+  color: var(--black-text-color-logo);
 }
 /* ХЕДЕР */
 
@@ -140,6 +148,26 @@ body {
 .site-nav .link:hover,
 .site-nav link:focus {
   color: var(--accent-color);
+}
+
+.link.current {
+  color: var(--accent-color);
+}
+.current::after {
+  content: "";
+  display: block;
+
+  position: absolute;
+  bottom: -1px;
+
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+
+  animation-name: fade-in;
+  animation-duration: var(--action-primary-duration);
+  animation-timing-function: var(--primary-bezier);
 }
 
 /* НАВІГАЦІЯ */
@@ -417,7 +445,7 @@ body {
   padding-right: 22px;
   border-radius: 2px;
   color: inherit;
-  background-color: var(--alt-bg-color);
+  background-color: var(--team-bg-color);
   font-weight: 500;
   line-height: 1.625;
   letter-spacing: 0.03em;
@@ -528,3 +556,82 @@ body {
 }
 
 /* ФУТЕР */
+
+/* МОДАЛЬНЕ ВІКНО */
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 1;
+  visibility: visible;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition-property: opacity, visibility;
+  transition-duration: var(--action-primary-duration);
+  transition-timing-function: var(--primary-bezier);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  min-width: 528px;
+  min-height: 582px;
+  transform: translate(-50%, -50%) scale(1);
+
+  transition-property: transform;
+  transition-duration: var(--action-primary-duration);
+  transition-timing-function: var(--primary-bezier);
+
+  background-color: var(--primary-bg-color);
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.close.button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-cross {
+  color: var(--black-text-color-logo);
+
+  transition-property: color;
+  transition-duration: var(--action-primary-duration);
+  transition-timing-function: var(--primary-bezier);
+}
+
+.modal .button:hover .modal-cross,
+.modal .button:focus .modal-cross {
+  color: var(--accent-color);
+}
+/* МОДАЛЬНЕ ВІКНО */
