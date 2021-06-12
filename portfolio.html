@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css">
@@ -15,12 +16,12 @@
     <!-- шапка сторінки -->
     <header class="header">
         <div class="container">
-            <a href="./index.html" class="logo link">Web <span class="logo-text">Studio</span></a>
+            <a class="logo link" href="./index.html">Web <span class="logo-text">Studio</span></a>
             <nav class="site-nav">
                 <ul class="list">
                     <li class="item"><a href="./index.html" class="link">Студия</a></li>
-                    <li class="item"><a href="./portfolio.html" class="link">Портфолио</a></li>
-                    <li class="item"><a href="#" class="link">Контакты</a></li>
+                    <li class="item"><a href="./portfolio.html" class="link current">Портфолио</a></li>
+                    <li class="item"><a href="#contacts" class="link">Контакты</a></li>
                 </ul>
             </nav>
                 <ul class="connection list">
@@ -51,6 +52,7 @@
         <section class=" section portfolio">
             <!-- фільтр вкладки "портфоліо" -->
             <div class="container">
+                <h1 class="title hide">Наши Проекты</h1>
                 <ul class="filter list">
                     <li class="item"><button type="button" class="button">Все</button></li>
                     <li class="item"><button type="button" class="button">Веб-сайты</button></li>
@@ -62,8 +64,14 @@
                 <!-- основне портфоліо -->
                 <ul class="cardset list">
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/technokryak.jpg" alt="technokryak" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/technokryak.jpg" alt="technokryak" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового
+                                    шпионажа и атак на защищённые сервера конкурентов.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Технокряк</h3>
                                 <p class="text">Веб-сайт</p>
@@ -71,17 +79,31 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/poster.jpg" alt="poster" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/poster.jpg" alt="poster" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Постер New Orlean vs Golden Star</h3>
                                 <p class="text">Дизайн</p>
                             </div>
                         </a>
                     </li>
+                    
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/seafood.jpg" alt="seafood" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/seafood.jpg" alt="seafood" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
+                            
                             <div class="card-desc">
                                 <h3 class="title">Ресторан Seafood</h3>
                                 <p class="text">Приложение</p>
@@ -89,8 +111,14 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/prime.jpg" alt="prime" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/prime.jpg" alt="prime" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Проект Prime</h3>
                                 <p class="text">Маркетинг</p>
@@ -98,8 +126,14 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/boxes.jpg" alt="boxes" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/boxes.jpg" alt="boxes" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Проект Boxes</h3>
                                 <p class="text">Приложение</p>
@@ -107,8 +141,14 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/noborders.jpg" alt="noborders" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/noborders.jpg" alt="noborders" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Inspiration has no Borders</h3>
                                 <p class="text">Веб-сайт</p>
@@ -116,8 +156,14 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/limited-editions.jpg" alt="limited-editions" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/limited-editions.jpg" alt="limited-editions" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Издание Limited Edition</h3>
                                 <p class="text">Дизайн</p>
@@ -125,8 +171,14 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/lab.jpg" alt="lab" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/lab.jpg" alt="lab" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Проект LAB</h3>
                                 <p class="text">Маркетинг</p>
@@ -134,8 +186,14 @@
                         </a>
                     </li>
                     <li class="card">
-                        <a href="#" class="link">
-                            <img class="image" src="./images/business.jpg" alt="business" width="370">
+                        <a href="#" class="card-link link">
+                            <div class="card-thumb">
+                                <img class="image" src="./images/business.jpg" alt="business" width="370">
+                                <div class="overlay">
+                                    <p class="text over">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed eligendi,
+                                    similique iusto perspiciatis nobis qui.</p>
+                                </div>
+                            </div>
                             <div class="card-desc">
                                 <h3 class="title">Growing Business</h3>
                                 <p class="text">Приложение</p>
@@ -148,11 +206,10 @@
 
     </main>
     <!-- підвал сторінки -->
-    <footer class="footer">
+    <footer id="contacts" class="footer">
         <div class="container">
             <address class="adress">
-                <a href="./index.html" class="logo">Web <span class="logo-text">Studio</span></a>
-                
+                <a class="logo" href="./index.html">Web <span class="logo-text">Studio</span></a>
                 <ul class="list">
                     <li class="item"><p class="text">г. Киев, пр-т Леси Украинки, 26</p></li>
                     <li class="item"><a href="mailto:info@example.com" class="contact link">info@example.com</a></li>
